@@ -30,7 +30,6 @@
 }
 
 html { scroll-behavior: smooth; }
-
 body {
   background: var(--cream);
   color: var(--ink);
@@ -39,24 +38,12 @@ body {
   min-height: 100vh;
 }
 
-/* ---- TYPOGRAPHY HELPERS ---- */
-.fell { font-family: 'IM Fell English', serif; font-weight: 400; }
-.cormorant-italic { font-family: 'Cormorant Infant', serif; font-style: italic; font-weight: 300; }
-
-/* ---- LAYOUT ---- */
-.container {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 0 var(--side-pad);
-}
-
 /* ---- HEADER ---- */
 .site-header {
   padding: 2.5rem var(--side-pad) 2rem;
   border-bottom: 0.5px solid var(--warm-border);
   text-align: center;
 }
-
 .logo {
   font-family: 'IM Fell English', serif;
   font-size: clamp(1.8rem, 5vw, 2.6rem);
@@ -65,14 +52,7 @@ body {
   line-height: 1;
 }
 .logo em { font-style: italic; color: var(--accent-light); }
-
-.logo-rule {
-  width: 180px;
-  height: 0.5px;
-  background: var(--warm-border);
-  margin: 0.75rem auto;
-}
-
+.logo-rule { width: 180px; height: 0.5px; background: var(--warm-border); margin: 0.75rem auto; }
 .logo-sub {
   font-family: 'Cormorant Infant', serif;
   font-style: italic;
@@ -88,7 +68,6 @@ body {
   border-bottom: 0.5px solid var(--warm-border);
   text-align: center;
 }
-
 .hero-text {
   font-family: 'IM Fell English', serif;
   font-size: clamp(1.8rem, 5vw, 2.8rem);
@@ -97,7 +76,6 @@ body {
   color: var(--ink);
 }
 .hero-text em { font-style: italic; color: var(--accent-light); }
-
 .hero-rule {
   display: flex;
   align-items: center;
@@ -106,13 +84,7 @@ body {
   max-width: 360px;
 }
 .hero-rule-line { flex: 1; height: 0.5px; background: var(--warm-border); }
-.hero-rule-diamond {
-  width: 5px; height: 5px;
-  background: var(--accent-light);
-  transform: rotate(45deg);
-  flex-shrink: 0;
-}
-
+.hero-rule-diamond { width: 5px; height: 5px; background: var(--accent-light); transform: rotate(45deg); flex-shrink: 0; }
 .hero-sub {
   font-family: 'Cormorant Infant', serif;
   font-style: italic;
@@ -122,6 +94,31 @@ body {
   max-width: 440px;
   margin: 0 auto;
   font-weight: 300;
+}
+
+/* ---- LOADING / ERROR ---- */
+.loading-state {
+  padding: 3rem var(--side-pad);
+  text-align: center;
+  font-family: 'Cormorant Infant', serif;
+  font-style: italic;
+  font-size: 1rem;
+  color: var(--ink-light);
+}
+.loading-dot { display: inline-block; animation: pulse 1.4s ease-in-out infinite; }
+.loading-dot:nth-child(2) { animation-delay: 0.2s; }
+.loading-dot:nth-child(3) { animation-delay: 0.4s; }
+@keyframes pulse { 0%, 80%, 100% { opacity: 0.3; } 40% { opacity: 1; } }
+.error-state {
+  padding: 2rem var(--side-pad);
+  text-align: center;
+  font-family: 'Cormorant Infant', serif;
+  font-style: italic;
+  color: var(--accent);
+  font-size: 0.95rem;
+  max-width: 500px;
+  margin: 0 auto;
+  line-height: 1.7;
 }
 
 /* ---- SECTION LABEL ---- */
@@ -141,7 +138,6 @@ body {
   max-width: var(--max-width);
   margin: 0 auto;
 }
-
 .cars-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
@@ -159,7 +155,6 @@ body {
 }
 .car-card:hover { border-color: var(--accent-light); background: var(--cream-dark); }
 .car-card.active { border-color: var(--accent); border-width: 1px; background: var(--cream-dark); }
-
 .car-img-wrap {
   width: 100%;
   aspect-ratio: 4 / 3;
@@ -168,18 +163,15 @@ body {
   position: relative;
 }
 .car-img-wrap img {
-  width: 100%;
-  height: 100%;
+  width: 100%; height: 100%;
   object-fit: cover;
   display: block;
   filter: sepia(20%) contrast(0.95);
   transition: transform 0.3s;
 }
 .car-card:hover .car-img-wrap img { transform: scale(1.03); }
-
 .img-placeholder {
-  width: 100%;
-  height: 100%;
+  width: 100%; height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -193,7 +185,6 @@ body {
   color: var(--ink-light);
   text-transform: uppercase;
 }
-
 .car-info { padding: 0.875rem 0.875rem 0.75rem; }
 .car-name {
   font-family: 'IM Fell English', serif;
@@ -203,7 +194,6 @@ body {
   color: var(--ink);
 }
 .car-card.active .car-name { color: var(--accent); }
-
 .car-years {
   font-family: 'Cormorant Infant', serif;
   font-style: italic;
@@ -218,7 +208,6 @@ body {
   margin-top: 0.4rem;
   text-transform: uppercase;
 }
-
 .active-pip {
   position: absolute;
   bottom: 0; left: 0; right: 0;
@@ -238,7 +227,6 @@ body {
   display: none;
 }
 .categories-section.visible { display: block; }
-
 .cat-header {
   margin-bottom: 1.25rem;
   display: flex;
@@ -252,7 +240,6 @@ body {
   font-size: 1.1rem;
   color: var(--accent);
 }
-
 .cat-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
@@ -269,7 +256,6 @@ body {
 }
 .cat-card:hover { border-color: var(--accent-light); }
 .cat-card.active { border-color: var(--accent); border-width: 1px; }
-
 .cat-img-wrap {
   width: 100%;
   aspect-ratio: 3 / 2;
@@ -277,15 +263,13 @@ body {
   overflow: hidden;
 }
 .cat-img-wrap img {
-  width: 100%;
-  height: 100%;
+  width: 100%; height: 100%;
   object-fit: cover;
   display: block;
   filter: sepia(15%) contrast(0.95);
   transition: transform 0.3s;
 }
 .cat-card:hover .cat-img-wrap img { transform: scale(1.03); }
-
 .cat-info { padding: 0.625rem 0.75rem 0.6rem; }
 .cat-name {
   font-family: 'IM Fell English', serif;
@@ -310,7 +294,6 @@ body {
   display: none;
 }
 .parts-section.visible { display: block; }
-
 .parts-heading {
   font-family: 'IM Fell English', serif;
   font-size: clamp(1rem, 3vw, 1.1rem);
@@ -318,9 +301,7 @@ body {
   margin-bottom: 1.25rem;
 }
 .parts-heading em { font-style: italic; color: var(--accent-light); }
-
 .parts-list { border-top: 0.5px solid var(--warm-border); }
-
 .part-row {
   padding: 0.75rem 0;
   border-bottom: 0.5px solid var(--warm-border);
@@ -330,7 +311,6 @@ body {
   gap: 1rem;
   flex-wrap: wrap;
 }
-
 .part-name {
   font-family: 'IM Fell English', serif;
   font-size: 0.95rem;
@@ -343,7 +323,13 @@ body {
   margin-top: 0.2rem;
   text-transform: uppercase;
 }
-
+.part-notes {
+  font-family: 'Cormorant Infant', serif;
+  font-style: italic;
+  font-size: 0.8rem;
+  color: var(--ink-light);
+  margin-top: 0.2rem;
+}
 .badge {
   font-size: 8px;
   letter-spacing: 0.12em;
@@ -353,10 +339,9 @@ body {
   font-family: 'Jost', sans-serif;
   white-space: nowrap;
 }
-.badge-cad { background: #e6edd8; color: #3a5215; border: 0.5px solid #9ab86a; }
+.badge-cad  { background: #e6edd8; color: #3a5215; border: 0.5px solid #9ab86a; }
 .badge-spec { background: #ede8d8; color: #5a4815; border: 0.5px solid #c4a85a; }
 .badge-none { background: var(--cream-dark); color: var(--ink-light); border: 0.5px solid var(--warm-border); }
-
 .part-action {
   font-family: 'Cormorant Infant', serif;
   font-style: italic;
@@ -383,11 +368,7 @@ body {
   margin-bottom: 1rem;
 }
 .footer-diamond-line { width: 60px; height: 0.5px; background: var(--warm-border); }
-.footer-diamond-shape {
-  width: 4px; height: 4px;
-  background: var(--warm-border);
-  transform: rotate(45deg);
-}
+.footer-diamond-shape { width: 4px; height: 4px; background: var(--warm-border); transform: rotate(45deg); }
 .footer-note {
   font-family: 'Cormorant Infant', serif;
   font-style: italic;
@@ -412,43 +393,28 @@ body {
 }
 .kofi-btn:hover { background: var(--accent-light); color: var(--cream); }
 
-/* ---- MOBILE OVERRIDES ---- */
+/* ---- MOBILE ---- */
 @media (max-width: 600px) {
   :root { --side-pad: 1rem; }
-
   .cars-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
-  .cat-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
-
-  .part-row { gap: 0.5rem; }
-  .part-row > div:last-child { flex-direction: column; align-items: flex-start; gap: 0.4rem; }
-
+  .cat-grid  { grid-template-columns: repeat(2, 1fr); gap: 8px; }
   .cat-header { flex-direction: column; gap: 0.25rem; }
+  .part-row > div:last-child { flex-direction: column; align-items: flex-start; gap: 0.4rem; }
 }
-
-@media (max-width: 380px) {
-  .cars-grid { grid-template-columns: 1fr 1fr; }
-}
-
 @media (min-width: 900px) {
   .cars-grid { grid-template-columns: repeat(5, 1fr); }
-  .cat-grid { grid-template-columns: repeat(6, 1fr); }
+  .cat-grid  { grid-template-columns: repeat(6, 1fr); }
 }
 </style>
 </head>
 <body>
 
-<!-- ============================================================
-     HEADER
-     ============================================================ -->
 <header class="site-header">
   <div class="logo"><em>classique</em>.help</div>
   <div class="logo-rule"></div>
   <div class="logo-sub">An open parts library for the classic motor car</div>
 </header>
 
-<!-- ============================================================
-     HERO
-     ============================================================ -->
 <section class="hero">
   <div class="hero-text">Every part, <em>remembered.</em></div>
   <div class="hero-rule">
@@ -459,327 +425,27 @@ body {
   <div class="hero-sub">Free CAD models, specifications &amp; manufacturing guides for the cars that deserve to survive.</div>
 </section>
 
-<!-- ============================================================
-     CARS SECTION
-     ============================================================ -->
-<section class="cars-section">
+<section class="cars-section" id="cars-section">
   <div class="section-label">Select your motor</div>
-  <div class="cars-grid" id="cars-grid">
-
-    <!-- --------------------------------------------------------
-         CAR CARD: Triumph Spitfire
-         --------------------------------------------------------
-         TO ADD A PHOTO:
-           1. Add your image file to the /assets/cars/ folder in
-              your GitHub repository.
-           2. Replace the placeholder block below with:
-              <img src="assets/cars/spitfire.jpg" alt="Triumph Spitfire">
-           Recommended filename: spitfire.jpg
-           Recommended size: 800x600px or similar 4:3 image
-         -------------------------------------------------------- -->
-    <div class="car-card" data-car="Triumph Spitfire" data-years="1962 – 1980">
-      <div class="car-img-wrap">
-        <!-- PHOTO PLACEHOLDER — replace with <img> tag as described above -->
-        <div class="img-placeholder">
-          <svg width="32" height="24" viewBox="0 0 32 24" fill="none">
-            <path d="M2 17 Q6 10 16 9 Q22 8 28 12 L30 17 Z" stroke="#6b5a47" stroke-width="1" fill="none"/>
-            <ellipse cx="8" cy="17" rx="3" ry="3" stroke="#6b5a47" stroke-width="1" fill="none"/>
-            <ellipse cx="24" cy="17" rx="3" ry="3" stroke="#6b5a47" stroke-width="1" fill="none"/>
-          </svg>
-          <span>Add photo</span>
-        </div>
-      </div>
-      <div class="car-info">
-        <div class="car-name">Triumph Spitfire</div>
-        <div class="car-years">1962 – 1980</div>
-        <div class="car-count">47 parts documented</div>
-      </div>
-      <div class="active-pip"></div>
-    </div>
-
-    <!-- --------------------------------------------------------
-         CAR CARD: Triumph GT6
-         --------------------------------------------------------
-         TO ADD A PHOTO:
-           Recommended filename: gt6.jpg
-           Path: assets/cars/gt6.jpg
-           Replace placeholder with:
-           <img src="assets/cars/gt6.jpg" alt="Triumph GT6">
-         -------------------------------------------------------- -->
-    <div class="car-card" data-car="Triumph GT6" data-years="1966 – 1973">
-      <div class="car-img-wrap">
-        <!-- PHOTO PLACEHOLDER — replace with <img> tag as described above -->
-        <div class="img-placeholder">
-          <svg width="32" height="24" viewBox="0 0 32 24" fill="none">
-            <path d="M2 17 Q6 10 16 9 Q22 8 28 12 L30 17 Z" stroke="#6b5a47" stroke-width="1" fill="none"/>
-            <ellipse cx="8" cy="17" rx="3" ry="3" stroke="#6b5a47" stroke-width="1" fill="none"/>
-            <ellipse cx="24" cy="17" rx="3" ry="3" stroke="#6b5a47" stroke-width="1" fill="none"/>
-          </svg>
-          <span>Add photo</span>
-        </div>
-      </div>
-      <div class="car-info">
-        <div class="car-name">Triumph GT6</div>
-        <div class="car-years">1966 – 1973</div>
-        <div class="car-count">31 parts documented</div>
-      </div>
-      <div class="active-pip"></div>
-    </div>
-
-    <!-- --------------------------------------------------------
-         CAR CARD: Triumph TR6
-         --------------------------------------------------------
-         TO ADD A PHOTO:
-           Recommended filename: tr6.jpg
-           Path: assets/cars/tr6.jpg
-           Replace placeholder with:
-           <img src="assets/cars/tr6.jpg" alt="Triumph TR6">
-         -------------------------------------------------------- -->
-    <div class="car-card" data-car="Triumph TR6" data-years="1969 – 1976">
-      <div class="car-img-wrap">
-        <!-- PHOTO PLACEHOLDER — replace with <img> tag as described above -->
-        <div class="img-placeholder">
-          <svg width="32" height="24" viewBox="0 0 32 24" fill="none">
-            <path d="M2 17 Q6 10 16 9 Q22 8 28 12 L30 17 Z" stroke="#6b5a47" stroke-width="1" fill="none"/>
-            <ellipse cx="8" cy="17" rx="3" ry="3" stroke="#6b5a47" stroke-width="1" fill="none"/>
-            <ellipse cx="24" cy="17" rx="3" ry="3" stroke="#6b5a47" stroke-width="1" fill="none"/>
-          </svg>
-          <span>Add photo</span>
-        </div>
-      </div>
-      <div class="car-info">
-        <div class="car-name">Triumph TR6</div>
-        <div class="car-years">1969 – 1976</div>
-        <div class="car-count">28 parts documented</div>
-      </div>
-      <div class="active-pip"></div>
-    </div>
-
-    <!-- --------------------------------------------------------
-         CAR CARD: Triumph TR4
-         --------------------------------------------------------
-         TO ADD A PHOTO:
-           Recommended filename: tr4.jpg
-           Path: assets/cars/tr4.jpg
-           Replace placeholder with:
-           <img src="assets/cars/tr4.jpg" alt="Triumph TR4">
-         -------------------------------------------------------- -->
-    <div class="car-card" data-car="Triumph TR4" data-years="1961 – 1965">
-      <div class="car-img-wrap">
-        <!-- PHOTO PLACEHOLDER — replace with <img> tag as described above -->
-        <div class="img-placeholder">
-          <svg width="32" height="24" viewBox="0 0 32 24" fill="none">
-            <path d="M2 17 Q6 10 16 9 Q22 8 28 12 L30 17 Z" stroke="#6b5a47" stroke-width="1" fill="none"/>
-            <ellipse cx="8" cy="17" rx="3" ry="3" stroke="#6b5a47" stroke-width="1" fill="none"/>
-            <ellipse cx="24" cy="17" rx="3" ry="3" stroke="#6b5a47" stroke-width="1" fill="none"/>
-          </svg>
-          <span>Add photo</span>
-        </div>
-      </div>
-      <div class="car-info">
-        <div class="car-name">Triumph TR4</div>
-        <div class="car-years">1961 – 1965</div>
-        <div class="car-count">12 parts documented</div>
-      </div>
-      <div class="active-pip"></div>
-    </div>
-
-    <!-- --------------------------------------------------------
-         CAR CARD: Triumph Herald
-         --------------------------------------------------------
-         TO ADD A PHOTO:
-           Recommended filename: herald.jpg
-           Path: assets/cars/herald.jpg
-           Replace placeholder with:
-           <img src="assets/cars/herald.jpg" alt="Triumph Herald">
-         -------------------------------------------------------- -->
-    <div class="car-card" data-car="Triumph Herald" data-years="1959 – 1971">
-      <div class="car-img-wrap">
-        <!-- PHOTO PLACEHOLDER — replace with <img> tag as described above -->
-        <div class="img-placeholder">
-          <svg width="32" height="24" viewBox="0 0 32 24" fill="none">
-            <path d="M2 17 Q6 10 16 9 Q22 8 28 12 L30 17 Z" stroke="#6b5a47" stroke-width="1" fill="none"/>
-            <ellipse cx="8" cy="17" rx="3" ry="3" stroke="#6b5a47" stroke-width="1" fill="none"/>
-            <ellipse cx="24" cy="17" rx="3" ry="3" stroke="#6b5a47" stroke-width="1" fill="none"/>
-          </svg>
-          <span>Add photo</span>
-        </div>
-      </div>
-      <div class="car-info">
-        <div class="car-name">Triumph Herald</div>
-        <div class="car-years">1959 – 1971</div>
-        <div class="car-count">8 parts documented</div>
-      </div>
-      <div class="active-pip"></div>
-    </div>
-
-    <!-- --------------------------------------------------------
-         TO ADD A NEW CAR MODEL:
-           1. Copy one of the car-card blocks above in full.
-           2. Update data-car, data-years, car-name, car-years,
-              car-count to match the new model.
-           3. Add a photo to assets/cars/ and update the img tag.
-           4. Add a matching entry in the partsData object in the
-              <script> section at the bottom of this file.
-         -------------------------------------------------------- -->
-
+  <div id="loading-cars" class="loading-state">
+    Loading the library<span class="loading-dot">.</span><span class="loading-dot">.</span><span class="loading-dot">.</span>
   </div>
+  <div class="cars-grid" id="cars-grid" style="display:none"></div>
 </section>
 
-<!-- ============================================================
-     CATEGORIES SECTION (revealed on car selection)
-     ============================================================ -->
 <section class="categories-section" id="cats-section">
   <div class="cat-header">
     <div class="section-label" style="margin-bottom:0">Select area —</div>
     <div class="selected-car-label" id="selected-car-name"></div>
   </div>
-  <div class="cat-grid">
-
-    <!-- --------------------------------------------------------
-         CATEGORY CARD: Engine
-         --------------------------------------------------------
-         TO ADD A PHOTO:
-           Recommended filename: cat-engine.jpg
-           Path: assets/categories/cat-engine.jpg
-           Replace placeholder with:
-           <img src="assets/categories/cat-engine.jpg" alt="Engine">
-         -------------------------------------------------------- -->
-    <div class="cat-card" data-cat="Engine">
-      <div class="cat-img-wrap">
-        <!-- PHOTO PLACEHOLDER — replace with <img> tag as described above -->
-        <div class="img-placeholder"><span>Add photo</span></div>
-      </div>
-      <div class="cat-info">
-        <div class="cat-name">Engine</div>
-        <div class="cat-desc">Block, head, manifolds</div>
-      </div>
-    </div>
-
-    <!-- --------------------------------------------------------
-         CATEGORY CARD: Fuel system
-         --------------------------------------------------------
-         TO ADD A PHOTO:
-           Recommended filename: cat-fuel.jpg
-           Path: assets/categories/cat-fuel.jpg
-           Replace placeholder with:
-           <img src="assets/categories/cat-fuel.jpg" alt="Fuel system">
-         -------------------------------------------------------- -->
-    <div class="cat-card" data-cat="Fuel system">
-      <div class="cat-img-wrap">
-        <!-- PHOTO PLACEHOLDER — replace with <img> tag as described above -->
-        <div class="img-placeholder"><span>Add photo</span></div>
-      </div>
-      <div class="cat-info">
-        <div class="cat-name">Fuel system</div>
-        <div class="cat-desc">Carbs, pump, lines</div>
-      </div>
-    </div>
-
-    <!-- --------------------------------------------------------
-         CATEGORY CARD: Suspension
-         --------------------------------------------------------
-         TO ADD A PHOTO:
-           Recommended filename: cat-suspension.jpg
-           Path: assets/categories/cat-suspension.jpg
-           Replace placeholder with:
-           <img src="assets/categories/cat-suspension.jpg" alt="Suspension">
-         -------------------------------------------------------- -->
-    <div class="cat-card" data-cat="Suspension">
-      <div class="cat-img-wrap">
-        <!-- PHOTO PLACEHOLDER — replace with <img> tag as described above -->
-        <div class="img-placeholder"><span>Add photo</span></div>
-      </div>
-      <div class="cat-info">
-        <div class="cat-name">Suspension</div>
-        <div class="cat-desc">Arms, uprights, bushes</div>
-      </div>
-    </div>
-
-    <!-- --------------------------------------------------------
-         CATEGORY CARD: Body
-         --------------------------------------------------------
-         TO ADD A PHOTO:
-           Recommended filename: cat-body.jpg
-           Path: assets/categories/cat-body.jpg
-           Replace placeholder with:
-           <img src="assets/categories/cat-body.jpg" alt="Body">
-         -------------------------------------------------------- -->
-    <div class="cat-card" data-cat="Body">
-      <div class="cat-img-wrap">
-        <!-- PHOTO PLACEHOLDER — replace with <img> tag as described above -->
-        <div class="img-placeholder"><span>Add photo</span></div>
-      </div>
-      <div class="cat-info">
-        <div class="cat-name">Body</div>
-        <div class="cat-desc">Panels, trim, seals</div>
-      </div>
-    </div>
-
-    <!-- --------------------------------------------------------
-         CATEGORY CARD: Interior
-         --------------------------------------------------------
-         TO ADD A PHOTO:
-           Recommended filename: cat-interior.jpg
-           Path: assets/categories/cat-interior.jpg
-           Replace placeholder with:
-           <img src="assets/categories/cat-interior.jpg" alt="Interior">
-         -------------------------------------------------------- -->
-    <div class="cat-card" data-cat="Interior">
-      <div class="cat-img-wrap">
-        <!-- PHOTO PLACEHOLDER — replace with <img> tag as described above -->
-        <div class="img-placeholder"><span>Add photo</span></div>
-      </div>
-      <div class="cat-info">
-        <div class="cat-name">Interior</div>
-        <div class="cat-desc">Fittings, brackets, clips</div>
-      </div>
-    </div>
-
-    <!-- --------------------------------------------------------
-         CATEGORY CARD: Drivetrain
-         --------------------------------------------------------
-         TO ADD A PHOTO:
-           Recommended filename: cat-drivetrain.jpg
-           Path: assets/categories/cat-drivetrain.jpg
-           Replace placeholder with:
-           <img src="assets/categories/cat-drivetrain.jpg" alt="Drivetrain">
-         -------------------------------------------------------- -->
-    <div class="cat-card" data-cat="Drivetrain">
-      <div class="cat-img-wrap">
-        <!-- PHOTO PLACEHOLDER — replace with <img> tag as described above -->
-        <div class="img-placeholder"><span>Add photo</span></div>
-      </div>
-      <div class="cat-info">
-        <div class="cat-name">Drivetrain</div>
-        <div class="cat-desc">Gearbox, diff, driveshafts</div>
-      </div>
-    </div>
-
-    <!-- --------------------------------------------------------
-         TO ADD A NEW CATEGORY:
-           1. Copy one of the cat-card blocks above.
-           2. Update data-cat, cat-name, cat-desc.
-           3. Add a photo to assets/categories/ and update the
-              img tag.
-           4. Add matching entries in the partsData object below
-              for each car that has parts in this category.
-         -------------------------------------------------------- -->
-
-  </div>
+  <div class="cat-grid" id="cat-grid"></div>
 </section>
 
-<!-- ============================================================
-     PARTS LIST (revealed on category selection)
-     ============================================================ -->
 <section class="parts-section" id="parts-section">
   <div class="parts-heading" id="parts-heading"></div>
   <div class="parts-list" id="parts-list"></div>
 </section>
 
-<!-- ============================================================
-     FOOTER
-     ============================================================ -->
 <footer class="site-footer">
   <div class="footer-diamond">
     <div class="footer-diamond-line"></div>
@@ -790,173 +456,336 @@ body {
   <a class="kofi-btn" href="https://ko-fi.com" target="_blank" rel="noopener">Support the project</a>
 </footer>
 
-<!-- ============================================================
-     PARTS DATA
-     ============================================================
-     Structure:
-       partsData["Car Name"]["Category"] = [ array of parts ]
-
-     Each part object:
-       name   — display name of the part
-       ref    — your internal reference number
-       status — "cad" | "spec" | "none"
-       file   — (optional) path to the CAD file download,
-                e.g. "assets/cad/spitfire/TRS-ENG-001.step"
-
-     STATUS KEY:
-       "cad"  — CAD model available for download
-       "spec" — Dimensions/spec documented, no CAD yet
-       "none" — Part listed but not yet documented
-
-     TO ADD A NEW CAR: add a top-level key matching the
-     data-car attribute on the car card exactly.
-
-     TO ADD A NEW PART: add an object to the relevant array.
-     ============================================================ -->
 <script>
-const partsData = {
+/* ============================================================
+   CLASSIQUE.HELP — Configuration & Data Layer
+   ============================================================ */
 
-  "Triumph Spitfire": {
-    "Engine": [
-      { name: "Inlet manifold, standard",     ref: "TRS-ENG-001", status: "cad",  file: "assets/cad/spitfire/TRS-ENG-001.step" },
-      { name: "Exhaust manifold",              ref: "TRS-ENG-002", status: "cad",  file: "assets/cad/spitfire/TRS-ENG-002.step" },
-      { name: "Rocker cover gasket",           ref: "TRS-ENG-003", status: "spec", file: "" },
-      { name: "Timing cover",                  ref: "TRS-ENG-004", status: "cad",  file: "assets/cad/spitfire/TRS-ENG-004.step" },
-      { name: "Water pump housing",            ref: "TRS-ENG-005", status: "none", file: "" },
-      { name: "Thermostat housing",            ref: "TRS-ENG-006", status: "spec", file: "" }
-    ],
-    "Fuel system": [
-      { name: "SU carburettor top",            ref: "TRS-FUEL-001", status: "cad",  file: "assets/cad/spitfire/TRS-FUEL-001.step" },
-      { name: "Float bowl",                    ref: "TRS-FUEL-002", status: "cad",  file: "assets/cad/spitfire/TRS-FUEL-002.step" },
-      { name: "Fuel pump mounting bracket",    ref: "TRS-FUEL-003", status: "spec", file: "" },
-      { name: "Accelerator pump diaphragm",    ref: "TRS-FUEL-004", status: "none", file: "" }
-    ],
-    "Suspension": [
-      { name: "Front trunnion",                ref: "TRS-SUSP-001", status: "cad",  file: "assets/cad/spitfire/TRS-SUSP-001.step" },
-      { name: "Wishbone bracket",              ref: "TRS-SUSP-002", status: "cad",  file: "assets/cad/spitfire/TRS-SUSP-002.step" },
-      { name: "Rear swing axle housing",       ref: "TRS-SUSP-003", status: "none", file: "" },
-      { name: "Anti-roll bar mount",           ref: "TRS-SUSP-004", status: "spec", file: "" }
-    ],
-    "Body": [
-      { name: "Door hinge pin",                ref: "TRS-BODY-001", status: "cad",  file: "assets/cad/spitfire/TRS-BODY-001.step" },
-      { name: "Bonnet catch bracket",          ref: "TRS-BODY-002", status: "cad",  file: "assets/cad/spitfire/TRS-BODY-002.step" },
-      { name: "Sill trim clip",                ref: "TRS-BODY-003", status: "spec", file: "" }
-    ],
-    "Interior": [
-      { name: "Dash grommet, large",           ref: "TRS-INT-001", status: "cad",  file: "assets/cad/spitfire/TRS-INT-001.step" },
-      { name: "Heater control knob",           ref: "TRS-INT-002", status: "cad",  file: "assets/cad/spitfire/TRS-INT-002.step" },
-      { name: "Seat runner bracket",           ref: "TRS-INT-003", status: "none", file: "" }
-    ],
-    "Drivetrain": [
-      { name: "Gearbox mount",                 ref: "TRS-DT-001", status: "cad",  file: "assets/cad/spitfire/TRS-DT-001.step" },
-      { name: "Propshaft centre bearing housing", ref: "TRS-DT-002", status: "none", file: "" },
-      { name: "Differential mounting bush",   ref: "TRS-DT-003", status: "spec", file: "" }
-    ]
-  },
+/* ------------------------------------------------------------
+   1. GOOGLE SHEETS CSV URL
+   ------------------------------------------------------------
+   Steps to get this URL:
+     1. Open your Google Sheet.
+     2. File > Share > Publish to web.
+     3. In the first dropdown select the sheet tab (e.g. "Parts").
+     4. In the second dropdown select "Comma-separated values (.csv)".
+     5. Click Publish, copy the link, paste it below.
 
-  "Triumph GT6": {
-    "Engine": [],
-    "Fuel system": [],
-    "Suspension": [],
-    "Body": [],
-    "Interior": [],
-    "Drivetrain": []
-  },
+   The URL looks like:
+   https://docs.google.com/spreadsheets/d/XXXX/pub?gid=0&single=true&output=csv
+   ------------------------------------------------------------ */
+const SHEET_CSV_URL = 'PASTE_YOUR_CSV_URL_HERE';
 
-  "Triumph TR6": {
-    "Engine": [],
-    "Fuel system": [],
-    "Suspension": [],
-    "Body": [],
-    "Interior": [],
-    "Drivetrain": []
-  },
 
-  "Triumph TR4": {
-    "Engine": [],
-    "Fuel system": [],
-    "Suspension": [],
-    "Body": [],
-    "Interior": [],
-    "Drivetrain": []
-  },
+/* ------------------------------------------------------------
+   2. GOOGLE SHEET COLUMN HEADERS
+   ------------------------------------------------------------
+   Your sheet must have EXACTLY these column headers in row 1
+   (spelling and capitalisation must match):
 
-  "Triumph Herald": {
-    "Engine": [],
-    "Fuel system": [],
-    "Suspension": [],
-    "Body": [],
-    "Interior": [],
-    "Drivetrain": []
-  }
+     car           Car model name          e.g.  Triumph Spitfire
+     model_years   Year range              e.g.  1962-1980
+     category      Area of the car         e.g.  Engine
+     part_name     Display name            e.g.  Inlet manifold, standard
+     ref           Reference number        e.g.  TRS-ENG-001
+     status        Availability            one of: cad | spec | none
+     cad_file      CAD filename only       e.g.  TRS-ENG-001.step
+                   (leave blank if none)
+     notes         Optional notes          e.g.  Fits MkIV only
 
+   Column order does not matter, only the header names do.
+   ------------------------------------------------------------ */
+
+
+/* ------------------------------------------------------------
+   3. CAD FILE NAMING CONVENTION
+   ------------------------------------------------------------
+   CAD files live in: assets/cad/[car-folder]/[filename]
+
+   The car folder name is the car name in lowercase with spaces
+   replaced by hyphens. Examples:
+     Triumph Spitfire  ->  triumph-spitfire
+     Triumph GT6       ->  triumph-gt6
+     Triumph TR6       ->  triumph-tr6
+     Triumph TR4       ->  triumph-tr4
+     Triumph Herald    ->  triumph-herald
+
+   Reference number format:  [CAR CODE]-[CATEGORY CODE]-[NUMBER]
+
+   Car codes:
+     TRS   Triumph Spitfire
+     TGT   Triumph GT6
+     TTR6  Triumph TR6
+     TTR4  Triumph TR4
+     TRH   Triumph Herald
+     (add new codes here as you expand to other marques)
+
+   Category codes:
+     ENG   Engine
+     FUEL  Fuel system
+     SUSP  Suspension
+     BODY  Body
+     INT   Interior
+     DT    Drivetrain
+
+   Full examples:
+     TRS-ENG-001.step    Triumph Spitfire, Engine, part 001
+     TGT-SUSP-003.stl    Triumph GT6, Suspension, part 003
+     TTR6-BODY-012.step  Triumph TR6, Body, part 012
+
+   In the spreadsheet, the cad_file column contains the
+   filename only — the site builds the full path automatically.
+
+   Supported file extensions: .step .stp .stl .f3d .iges .dxf
+   ------------------------------------------------------------ */
+
+
+/* ------------------------------------------------------------
+   4. CAR PHOTOS
+   ------------------------------------------------------------
+   Upload photos to:  assets/cars/  in your GitHub repo.
+   Then add the filename next to the matching car name below.
+
+   Recommended image size: 800 x 600px (4:3 ratio).
+   Any format works (jpg, png, webp). The sepia tone is applied
+   automatically so photos do not need to match in colour tone.
+
+   Format:  'Car Name exactly as in spreadsheet': 'filename.jpg'
+   Leave as empty string '' to show the placeholder.
+   ------------------------------------------------------------ */
+const CAR_IMAGES = {
+  'Triumph Spitfire': '',   /* Upload as: assets/cars/spitfire.jpg  */
+  'Triumph GT6':      '',   /* Upload as: assets/cars/gt6.jpg       */
+  'Triumph TR6':      '',   /* Upload as: assets/cars/tr6.jpg       */
+  'Triumph TR4':      '',   /* Upload as: assets/cars/tr4.jpg       */
+  'Triumph Herald':   '',   /* Upload as: assets/cars/herald.jpg    */
+  /* When you add a new car to the spreadsheet, add a line here:  */
+  /* 'New Car Name': 'new-car.jpg',                               */
 };
 
-/* ============================================================
-   STATUS DISPLAY CONFIG — no need to edit this
-   ============================================================ */
-const statusLabel  = { cad: "CAD available", spec: "Spec only", none: "Undocumented" };
-const statusClass  = { cad: "badge-cad",     spec: "badge-spec", none: "badge-none" };
-const statusAction = { cad: "Download model &rarr;", spec: "View specification &rarr;", none: "Contribute &rarr;" };
+
+/* ------------------------------------------------------------
+   5. CATEGORY PHOTOS
+   ------------------------------------------------------------
+   These images are shared across all car models.
+   Upload photos to:  assets/categories/  in your GitHub repo.
+   Then add the filename next to the matching category below.
+
+   Format:  'Category Name': 'filename.jpg'
+   Leave as empty string '' to show the placeholder.
+   ------------------------------------------------------------ */
+const CATEGORY_IMAGES = {
+  'Engine':      '',   /* Upload as: assets/categories/cat-engine.jpg      */
+  'Fuel system': '',   /* Upload as: assets/categories/cat-fuel.jpg        */
+  'Suspension':  '',   /* Upload as: assets/categories/cat-suspension.jpg  */
+  'Body':        '',   /* Upload as: assets/categories/cat-body.jpg        */
+  'Interior':    '',   /* Upload as: assets/categories/cat-interior.jpg    */
+  'Drivetrain':  '',   /* Upload as: assets/categories/cat-drivetrain.jpg  */
+  /* Add new categories here if you add them to the spreadsheet  */
+};
+
+
+/* ------------------------------------------------------------
+   6. CATEGORY DESCRIPTIONS
+   ------------------------------------------------------------
+   Short italic subtitle shown on each category card.
+   ------------------------------------------------------------ */
+const CATEGORY_DESCS = {
+  'Engine':      'Block, head, manifolds',
+  'Fuel system': 'Carbs, pump, lines',
+  'Suspension':  'Arms, uprights, bushes',
+  'Body':        'Panels, trim, seals',
+  'Interior':    'Fittings, brackets, clips',
+  'Drivetrain':  'Gearbox, diff, driveshafts',
+};
+
 
 /* ============================================================
-   INTERACTION LOGIC — no need to edit this
+   INTERNAL LOGIC — no need to edit below this line
    ============================================================ */
-document.querySelectorAll('.car-card').forEach(card => {
-  card.addEventListener('click', () => {
-    document.querySelectorAll('.car-card').forEach(c => c.classList.remove('active'));
-    card.classList.add('active');
-    document.getElementById('selected-car-name').textContent = card.dataset.car;
-    document.getElementById('cats-section').classList.add('visible');
-    document.getElementById('parts-section').classList.remove('visible');
-    document.querySelectorAll('.cat-card').forEach(c => c.classList.remove('active'));
-    document.getElementById('cats-section').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-  });
-});
 
-document.querySelectorAll('.cat-card').forEach(card => {
-  card.addEventListener('click', () => {
-    document.querySelectorAll('.cat-card').forEach(c => c.classList.remove('active'));
-    card.classList.add('active');
-    const car = document.getElementById('selected-car-name').textContent;
-    showParts(car, card.dataset.cat);
+const STATUS_LABEL  = { cad: 'CAD available', spec: 'Spec only', none: 'Undocumented' };
+const STATUS_CLASS  = { cad: 'badge-cad',     spec: 'badge-spec', none: 'badge-none'  };
+const STATUS_ACTION = { cad: 'Download model', spec: 'View specification', none: 'Contribute' };
+const CATEGORY_ORDER = ['Engine', 'Fuel system', 'Suspension', 'Body', 'Interior', 'Drivetrain'];
+
+let allParts = [];
+
+function carSlug(name) {
+  return name.toLowerCase().replace(/\s+/g, '-');
+}
+
+function placeholderSVG() {
+  return `<div class="img-placeholder">
+    <svg width="32" height="24" viewBox="0 0 32 24" fill="none">
+      <path d="M2 17 Q6 10 16 9 Q22 8 28 12 L30 17 Z" stroke="#6b5a47" stroke-width="1" fill="none"/>
+      <ellipse cx="8" cy="17" rx="3" ry="3" stroke="#6b5a47" stroke-width="1" fill="none"/>
+      <ellipse cx="24" cy="17" rx="3" ry="3" stroke="#6b5a47" stroke-width="1" fill="none"/>
+    </svg>
+    <span>Add photo</span>
+  </div>`;
+}
+
+function parseCSV(text) {
+  const lines = text.trim().split('\n');
+  const headers = lines[0].split(',').map(h => h.trim().replace(/^"|"$/g, '').toLowerCase().replace(/\s+/g, '_'));
+  return lines.slice(1).map(line => {
+    const vals = [];
+    let inQuote = false, cur = '';
+    for (let i = 0; i < line.length; i++) {
+      const ch = line[i];
+      if (ch === '"') { inQuote = !inQuote; }
+      else if (ch === ',' && !inQuote) { vals.push(cur.trim()); cur = ''; }
+      else { cur += ch; }
+    }
+    vals.push(cur.trim());
+    const obj = {};
+    headers.forEach((h, i) => { obj[h] = (vals[i] || '').replace(/^"|"$/g, '').trim(); });
+    return obj;
+  }).filter(row => row.car && row.part_name);
+}
+
+function buildCarsGrid(parts) {
+  const carsMap = {};
+  parts.forEach(p => {
+    if (!carsMap[p.car]) carsMap[p.car] = { years: p.model_years, count: 0 };
+    carsMap[p.car].count++;
   });
-});
+
+  const grid = document.getElementById('cars-grid');
+  grid.innerHTML = '';
+
+  Object.entries(carsMap).forEach(([car, info]) => {
+    const imgFile = CAR_IMAGES[car];
+    const imgHtml = imgFile
+      ? `<img src="assets/cars/${imgFile}" alt="${car}" loading="lazy">`
+      : placeholderSVG();
+
+    const card = document.createElement('div');
+    card.className = 'car-card';
+    card.dataset.car = car;
+    card.innerHTML = `
+      <div class="car-img-wrap">${imgHtml}</div>
+      <div class="car-info">
+        <div class="car-name">${car}</div>
+        <div class="car-years">${info.years || ''}</div>
+        <div class="car-count">${info.count} part${info.count !== 1 ? 's' : ''} documented</div>
+      </div>
+      <div class="active-pip"></div>`;
+
+    card.addEventListener('click', () => selectCar(car));
+    grid.appendChild(card);
+  });
+
+  document.getElementById('loading-cars').style.display = 'none';
+  grid.style.display = '';
+}
+
+function buildCatsGrid(car) {
+  const cats = [...new Set(allParts.filter(p => p.car === car).map(p => p.category))];
+  const ordered = CATEGORY_ORDER.filter(c => cats.includes(c)).concat(cats.filter(c => !CATEGORY_ORDER.includes(c)));
+
+  const grid = document.getElementById('cat-grid');
+  grid.innerHTML = '';
+
+  ordered.forEach(cat => {
+    const imgFile = CATEGORY_IMAGES[cat];
+    const imgHtml = imgFile
+      ? `<img src="assets/categories/${imgFile}" alt="${cat}" loading="lazy">`
+      : `<div class="img-placeholder"><span>Add photo</span></div>`;
+
+    const card = document.createElement('div');
+    card.className = 'cat-card';
+    card.dataset.cat = cat;
+    card.innerHTML = `
+      <div class="cat-img-wrap">${imgHtml}</div>
+      <div class="cat-info">
+        <div class="cat-name">${cat}</div>
+        <div class="cat-desc">${CATEGORY_DESCS[cat] || ''}</div>
+      </div>`;
+
+    card.addEventListener('click', () => selectCat(cat));
+    grid.appendChild(card);
+  });
+}
+
+function selectCar(car) {
+  document.querySelectorAll('.car-card').forEach(c => c.classList.toggle('active', c.dataset.car === car));
+  document.getElementById('selected-car-name').textContent = car;
+  buildCatsGrid(car);
+  document.getElementById('cats-section').classList.add('visible');
+  document.getElementById('parts-section').classList.remove('visible');
+  document.querySelectorAll('.cat-card').forEach(c => c.classList.remove('active'));
+  document.getElementById('cats-section').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+function selectCat(cat) {
+  document.querySelectorAll('.cat-card').forEach(c => c.classList.toggle('active', c.dataset.cat === cat));
+  const car = document.getElementById('selected-car-name').textContent;
+  showParts(car, cat);
+}
 
 function showParts(car, cat) {
-  const section  = document.getElementById('parts-section');
-  const list     = document.getElementById('parts-list');
-  const heading  = document.getElementById('parts-heading');
+  const parts   = allParts.filter(p => p.car === car && p.category === cat);
+  const heading = document.getElementById('parts-heading');
+  const list    = document.getElementById('parts-list');
+  const section = document.getElementById('parts-section');
 
-  heading.innerHTML = car + ' &mdash; <em>' + cat + '</em>';
+  heading.innerHTML = `${car} &mdash; <em>${cat}</em>`;
 
-  const data = (partsData[car] && partsData[car][cat]) || [];
-
-  if (!data.length) {
-    list.innerHTML = '<div class="part-row"><span style="font-family:\'Cormorant Infant\',serif;font-style:italic;font-size:0.9rem;color:var(--ink-light)">No parts documented yet for this category. Be the first to contribute.</span></div>';
+  if (!parts.length) {
+    list.innerHTML = `<div class="part-row">
+      <span style="font-family:'Cormorant Infant',serif;font-style:italic;font-size:0.9rem;color:var(--ink-light)">
+        No parts documented yet for this category. Be the first to contribute.
+      </span>
+    </div>`;
   } else {
-    list.innerHTML = data.map(p => {
-      const actionHtml = p.status === 'cad' && p.file
-        ? `<a class="part-action" href="${p.file}" download>${statusAction[p.status]}</a>`
-        : `<span class="part-action">${statusAction[p.status]}</span>`;
-      return `
-        <div class="part-row">
-          <div>
-            <div class="part-name">${p.name}</div>
-            <div class="part-ref">${p.ref}</div>
-          </div>
-          <div style="display:flex;align-items:center;gap:0.75rem;flex-shrink:0">
-            <span class="badge ${statusClass[p.status]}">${statusLabel[p.status]}</span>
-            ${actionHtml}
-          </div>
-        </div>`;
+    list.innerHTML = parts.map(p => {
+      const status  = (p.status || 'none').toLowerCase();
+      const cadPath = p.cad_file ? `assets/cad/${carSlug(p.car)}/${p.cad_file}` : '';
+      const actionHtml = (status === 'cad' && cadPath)
+        ? `<a class="part-action" href="${cadPath}" download>${STATUS_ACTION[status]} &rarr;</a>`
+        : `<span class="part-action">${STATUS_ACTION[status] || STATUS_ACTION['none']} &rarr;</span>`;
+      const notesHtml = p.notes ? `<div class="part-notes">${p.notes}</div>` : '';
+
+      return `<div class="part-row">
+        <div>
+          <div class="part-name">${p.part_name}</div>
+          <div class="part-ref">${p.ref}</div>
+          ${notesHtml}
+        </div>
+        <div style="display:flex;align-items:center;gap:0.75rem;flex-shrink:0">
+          <span class="badge ${STATUS_CLASS[status] || STATUS_CLASS['none']}">${STATUS_LABEL[status] || STATUS_LABEL['none']}</span>
+          ${actionHtml}
+        </div>
+      </div>`;
     }).join('');
   }
 
   section.classList.add('visible');
   section.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 }
-</script>
 
+async function init() {
+  if (SHEET_CSV_URL === 'PASTE_YOUR_CSV_URL_HERE') {
+    document.getElementById('loading-cars').innerHTML =
+      `<div class="error-state">Paste your Google Sheets CSV URL into the SHEET_CSV_URL variable at the top of the script in index.html to load the parts library.</div>`;
+    return;
+  }
+  try {
+    const res = await fetch(SHEET_CSV_URL);
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const text = await res.text();
+    allParts = parseCSV(text);
+    if (!allParts.length) throw new Error('Sheet appears to be empty or column headers do not match.');
+    buildCarsGrid(allParts);
+  } catch (err) {
+    document.getElementById('loading-cars').innerHTML =
+      `<div class="error-state">Could not load the parts library. Check that your Google Sheet is published as a CSV and the URL is correct.<br><br><small>${err.message}</small></div>`;
+  }
+}
+
+init();
+</script>
 </body>
 </html>
